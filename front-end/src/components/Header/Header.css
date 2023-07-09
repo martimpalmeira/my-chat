@@ -1,0 +1,127 @@
+header{
+    height: 70px;
+    width: 100%;
+    background-color: #0C8CE9;
+    padding: 0 40px;
+}
+
+header nav{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.logo{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo:hover{
+    opacity: 0.8;
+}
+
+.logo-link{
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    text-decoration: none;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.profile-container{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+}
+
+
+
+.profile-img, .three-dots{
+    cursor: pointer;
+}
+
+
+
+
+.profile-img{
+    border-radius: 60%;
+    width: 3rem;
+    border: 1px solid white;
+    
+}
+
+.dot{
+    display: block;
+}
+
+.three-dots{
+    height: 2.8rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dot, .dot::after, .dot::before{
+    content: '';
+    height: 0.4rem;
+    width: 0.4rem;
+    background-color: white;
+    border-radius: 50%;
+}
+
+
+
+.dot::after{
+    position: absolute;
+    bottom: 0.4rem;
+}
+
+.dot::before{
+    position: absolute;
+    top: 0.4rem;
+}
+
+.profile-config-dropdown{
+    position: absolute;
+    bottom: -128px;
+    right: -40px; 
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+   
+
+
+}
+
+.profile-config-dropdown a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    background-color: #ACACAC; 
+    padding: 20px;
+}
+
+.profile-config-dropdown a:hover{
+    opacity: 0.8;
+}
+
+
+
+.profile-container{
+    cursor: pointer;
+}
+
+.profile-container:hover .profile-img,
+.profile-container:hover .three-dots{
+    opacity: 0.8;
+}
+
+

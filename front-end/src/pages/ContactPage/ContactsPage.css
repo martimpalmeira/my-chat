@@ -1,0 +1,23 @@
+.contact-page-container{
+    display: flex;
+    width: 100%;
+    height: calc(100% - 70px);
+}
+
+.contact-page-left-container, .contact-page-right-container{
+    width: 100%;
+}
+
+/* .contact-page-left-container{
+    height: calc(100% - 150px);
+}
+
+.contact-page-right-container{
+    height: calc(100% - 70px);
+} */
+
+
+.contact-page-left-container{
+    max-width: 360px;
+}
+

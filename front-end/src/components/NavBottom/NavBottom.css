@@ -1,0 +1,27 @@
+.chat-icon, .users-icon, .groups-icon, .option p{
+    color: #ACACAC;
+}
+
+.bottom-menu-options{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0px;
+    border-top: 1px solid #E2E2E2;
+    height: 80px;
+    border-right: 1px solid #E2E2E2;
+}
+
+.bottom-menu-options .option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.option:hover .chat-icon, 
+.option:hover .users-icon, 
+.option:hover .groups-icon, 
+.option:hover  p{
+    color: #0C8CE9;
+}
