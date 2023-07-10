@@ -129,3 +129,8 @@
     margin: auto auto;
     font-size: 1rem;
   }
+
+
+  .selected-contact{
+    background-color: #E9E9E9;
+  }

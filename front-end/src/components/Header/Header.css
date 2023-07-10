@@ -97,7 +97,7 @@ header nav{
     flex-direction: column;
     width: 10rem;
    
-
+    z-index: 4;
 
 }
 

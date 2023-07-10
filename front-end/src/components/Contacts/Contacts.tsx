@@ -2,25 +2,10 @@ import React from "react";
 import "./Contacts.css";
 import profileDefaultPicture from "../../assets/profile-default-image.svg";
 import { IContact } from "../../interfaces/IContact";
+import { useState } from "react";
+import { KeyboardEvent } from "react";
 
-function sortContactsByName(contacts: IContact[]): IContact[] {
-  // Use the sort() method with a custom comparison function
-  return contacts.sort((a, b) => {
-    // Convert names to lowercase for case-insensitive sorting
-    const nameA = a.name.toLowerCase();
-    const nameB = b.name.toLowerCase();
-
-    if (nameA < nameB) {
-      return -1; // nameA comes before nameB
-    } else if (nameA > nameB) {
-      return 1; // nameA comes after nameB
-    } else {
-      return 0; // names are equal
-    }
-  });
-}
-
-const Contacts = () => {
+function Contacts() {
   let contacts: IContact[] = [];
 
   let contact1: IContact = {
@@ -43,24 +28,72 @@ const Contacts = () => {
 
   let contact4: IContact = {
     name: "Marcos",
-    phone: "55(74)981290360",
+    phone: "55(74)9812903603",
     status: "Available",
   };
 
-   contacts = [contact1, contact2, contact3, contact4];
+  contacts = [contact1, contact2, contact3, contact4];
+
+  const [selectedContact, setSelectedOption] = useState<IContact>(contact3);
+
+  const [filteredList, setFilteredList] = useState<IContact[]>(contacts);
+
+  function handleSearchBarKeyUp(event: KeyboardEvent) {
+    let value = (event.target as HTMLInputElement).value;
+    if (value.trim() == "") {
+      setFilteredList(contacts);
+    } else {
+      setFilteredList(() =>
+        contacts.filter((contact) => {
+          return contact.name.toLowerCase().includes(value.toLowerCase());
+        })
+      );
+    }
+  }
+
+  function sortContactsByName(contacts: IContact[]): IContact[] {
+    // Use the sort() method with a custom comparison function
+    return contacts.sort((a, b) => {
+      // Convert names to lowercase for case-insensitive sorting
+      const nameA = a.name.toLowerCase();
+      const nameB = b.name.toLowerCase();
+
+      if (nameA < nameB) {
+        return -1; // nameA comes before nameB
+      } else if (nameA > nameB) {
+        return 1; // nameA comes after nameB
+      } else {
+        return 0; // names are equal
+      }
+    });
+  }
+
+  function handleContactClick(contact: IContact) {
+    setSelectedOption(contact);
+  }
 
   return (
     <div className="contacts-container">
       <div className="search-bar">
-        <input type="text" placeholder="Search User" />
+        <input
+          type="text"
+          placeholder="Search User"
+          onKeyUp={handleSearchBarKeyUp}
+        />
         <button className="add-contact-btn"></button>
       </div>
       <div className="contacts-list">
-        {contacts.length == 0 && (
+        {filteredList.length == 0 && (
           <p className="no-contacts-found-message">Users not found</p>
         )}
-        {sortContactsByName(contacts).map((contact) => (
-          <div className="contact" key={contact.phone}>
+        {sortContactsByName(filteredList).map((contact) => (
+          <div
+            className={`contact ${
+              selectedContact == contact && "selected-contact"
+            }`}
+            onClick={() => handleContactClick(contact)}
+            key={contact.phone}
+          >
             <img
               src={profileDefaultPicture}
               alt=""
@@ -75,6 +108,6 @@ const Contacts = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Contacts;

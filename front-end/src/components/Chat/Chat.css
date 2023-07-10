@@ -38,9 +38,14 @@
   width: 100%;
   max-height: 100%;
   padding: 20px;
-  padding-bottom: 50px;
   overflow-y: auto;
 }
+
+.messages{
+  padding-top: 20px;
+}
+
+
 
 .chat-messages-container::-webkit-scrollbar {
   width: 5px;
@@ -191,6 +196,7 @@
   width: 100%;
 }
 
+
 .my-message,
 .other-message {
   position: relative;
@@ -209,4 +215,10 @@
 
 .other-message .message-send-time {
   left: 0.25rem;
+}
+
+
+.messages div:last-child .message:last-of-type {
+  margin-bottom: 25px;
+  
 }

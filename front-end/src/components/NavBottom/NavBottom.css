@@ -25,3 +25,7 @@
 .option:hover  p{
     color: #0C8CE9;
 }
+
+.selected-option{
+    color: #0C8CE9 !important;
+}

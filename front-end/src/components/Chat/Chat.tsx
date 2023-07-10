@@ -34,7 +34,7 @@ export const Chat = () => {
         <div className="chat-date">04 Jul 2023</div>
         <div className="messages">
           <div className="my-message-container">
-            <div className="my-message">
+            <div className="my-message message">
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus impedit deserunt modi! Aliquid voluptatibus accusamus iste id distinctio tempora assumenda alias esse, non quo corrupti eos, numquam quos delectus nemo?
                 
@@ -44,14 +44,14 @@ export const Chat = () => {
           </div>
 
           <div className="other-message-container">
-            <div className="other-message">
+            <div className="other-message message">
               <p>Lorem ipsum dolor sit </p>
               <p className="message-send-time">10:22</p>
             </div>
           </div>
 
           <div className="my-message-container">
-            <div className="my-message">
+            <div className="my-message message">
               <p>
                 Lorem ipsum dolor sit
                 
@@ -61,7 +61,7 @@ export const Chat = () => {
           </div>
 
           <div className="my-message-container">
-            <div className="my-message">
+            <div className="my-message message">
               <p>
                 Lorem ipsum dolor sit
                 
@@ -71,21 +71,21 @@ export const Chat = () => {
           </div>
 
           <div className="other-message-container">
-            <div className="other-message">
+            <div className="other-message message">
               <p>Lorem ipsum dolor sit </p>
               <p className="message-send-time">10:22</p>
             </div>
           </div>
 
           <div className="other-message-container">
-            <div className="other-message">
+            <div className="other-message message">
               <p>Lorem ipsum dolor sit </p>
               <p className="message-send-time">10:22</p>
             </div>
           </div>
 
           <div className="my-message-container">
-            <div className="my-message">
+            <div className="my-message message">
               <p>
                 Lorem ipsum dolor sit
                 
@@ -95,11 +95,18 @@ export const Chat = () => {
           </div>
 
           <div className="my-message-container">
-            <div className="my-message">
+            <div className="my-message message">
               <p>
                 Lorem ipsum dolor sit
                 
               </p>
+              <p className="message-send-time">10:22</p>
+            </div>
+          </div>
+
+          <div className="other-message-container">
+            <div className="other-message message">
+              <p>Lorem ipsum dolor sit </p>
               <p className="message-send-time">10:22</p>
             </div>
           </div>
